@@ -17,4 +17,7 @@ Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
 
+Route::post('/lti', [App\Http\Controllers\LtiController::class, 'ltiMessage']);
+Route::get('/lti/jwks', [App\Http\Controllers\LtiController::class, 'getJWKS']);
+
 require __DIR__.'/auth.php';
